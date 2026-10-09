@@ -1,18 +1,36 @@
 # Worksheet 1.2: Task 2 Solution
+import sys
+from util import read_numbers
 
-floatNumbers = [] 
 
-while True:
-    try:
-        numbers = int(input("How many float numbers do you want to add to the list?: "))
-        break 
-    except ValueError:
-        sys.exit("Error: You must enter a number")
+numbers = read_numbers()
 
-for i in range(numbers):
-    try:
-        floatInput = float(input("Enter the float number: "))
-        floatNumbers.append(floatInput)
+#####need to ensure that all items in the list are numbers##################
 
-    except ValueError:
-        sys.exit("ErrorL You must enter a float number")
+total = sum(numbers)
+count = len(numbers)
+
+mean = total / count
+
+
+ordered_numbers = sorted(numbers)
+
+
+if count % 2 == 0:
+    count = count + 1
+
+else:
+    count = count
+    
+middleIndex = count // 2
+median = ordered_numbers[middleIndex]
+    
+
+maximum = ordered_numbers[len(ordered_numbers)-1]
+
+minimum = ordered_numbers[0]
+
+print(f"Minimum = {minimum}")
+print(f"Maximum = {maximum}")
+print(f"Mean = {mean}")
+print(f"Median = {median}")
