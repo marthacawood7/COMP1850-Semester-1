@@ -20,4 +20,4 @@ with open('file_data.txt', 'r') as file:
 # We will study this in more detail later on, but in this case we read character by character
 # We use 'break' to exit the reading process at the end of the file.
 
-# Why do we use an infinite 'while True' loop for this process?
+# Why do we use an infinite 'while True' loop for this process? --- As we dont know how many characters are in the file, it is true as long as there are characters in the file
