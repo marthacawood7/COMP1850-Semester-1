@@ -22,3 +22,12 @@
 # - Sales amounts are stored as strings - you'll need to convert to int() for math
 # - For finding the highest selling widget, use a dictionary to count units sold per product
 # - For average, sum all sales amounts and divide by number of rows
+
+
+with open("/workspaces/COMP1850-Semester-1/week1.3/session2/task2/3_sales_data/sales.csv","r") as file:
+    data = file.read()
+    
+    
+max = {date:widget:total:units:region for date in data}
+print(max)
+    

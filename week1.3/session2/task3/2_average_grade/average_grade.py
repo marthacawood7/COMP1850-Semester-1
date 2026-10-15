@@ -14,3 +14,10 @@
 # Write each student's name and their average grade to the report
 # hint: use 'w' mode to create a fresh report each time
 # hint: format averages nicely, maybe to 2 decimal places with :.2f
+
+
+with open("/workspaces/COMP1850-Semester-1/week1.3/session2/task3/2_average_grade/student_data.csv", "r") as file:
+    for line in file:
+        average_grade = (line[3] + line[4] + line[5])/3
+
+        print(average_grade)

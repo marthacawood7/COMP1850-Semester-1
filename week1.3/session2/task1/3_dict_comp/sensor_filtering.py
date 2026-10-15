@@ -7,3 +7,6 @@ home_sensors = {"Living Room Thermostat": 85, "Front Door Lock": 15, "Kitchen Sm
 
 
 # print the new dictionary with battery less than 20 to verify
+
+low = {sensor:value for sensor, value in home_sensors.items() if value < 20}
+print(low)

@@ -15,3 +15,11 @@
 # story.txt - 290
 # story2.txt - 326
 # glasses.txt - 210
+
+storycount = 0
+with open("/workspaces/COMP1850-Semester-1/week1.3/session2/task2/1_word_counter/story.txt", "r") as file:
+    data = file.read()
+    words = data.split()
+    count += len(words)
+
+print(f"story.txt: {count}")
