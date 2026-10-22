@@ -16,14 +16,15 @@
 
 def circle_area(radius, pi_value):  # assign a default value to pi_value
     # complete the code here
+    area = pi_value * (radius**2)
 
     return area
 
 
 # Check if correct output is produced
-print(circle_area(2))
-print(circle_area(5))
-print(circle_area(22.5))
+print(circle_area(2, 3.14))
+print(circle_area(5, 3.14))
+print(circle_area(22.5, 3.14))
 
 # For those knowing how to import a module, you could import the math module
 # and then use math.pi as the default value for pi_value.

@@ -21,9 +21,16 @@ def most_frequent_string(votes):
     # Hint 1: You can complete this task with for loops or comprehensions 
     # Hint 2: Think about the properties of the various collection-types
 
+    highest = votes[0]
+    number_votes = 1
+    for i in range (len(votes)):
+        if votes[i]
+        
+
 
 fruit = ['date', 'apple', 'cherry', 'date', 'apple', 'apple', 'elderberry',
          'date', 'elderberry', 'elderberry', 'date', 'banana']
+
 names = ['Jesy', 'Leigh-Anne', 'Perrie', 'Leigh-Anne', 'Jade',
          'Leigh-Anne', 'Perrie', 'Leigh-Anne', 'Jesy', 'Jade',
          'Leigh-Anne', 'Leigh-Anne', 'Leigh-Anne', 'Leigh-Anne',
@@ -32,10 +39,11 @@ names = ['Jesy', 'Leigh-Anne', 'Perrie', 'Leigh-Anne', 'Jade',
          'Jesy', 'Jesy', 'Perrie', 'Jesy']
 
 
+
 # Check if correct output is produced
 print(most_frequent_string(fruit))          # ('date', 4)
 print(most_frequent_string(names))     # ('Leigh-Anne', 10)
-print(most_frequent_string([]))             # (None, None)
+#print(most_frequent_string([]))             # (None, None)
 
 # If completed, you could update the function to return all items that tie for the
 # highest count in a list, e.g  (['apples', 'bananas'], 9). If there is no

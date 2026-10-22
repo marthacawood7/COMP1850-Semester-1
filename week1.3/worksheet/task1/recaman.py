@@ -5,6 +5,22 @@ L = int(input("Length of sequence: ")) # this should be your only input
 
 # Your code for the Recaman Sequence
 # You should store the sequence in an appropriate data structure named 'sequence'
+#####subtract if possible and if not add#####
+
+count = 0
+value = 0
+sequence = []
+for i in range(L):
+    if count < value and (value - count) not in sequence:
+        value = value - count
+        count = count + 1
+        
+    else:
+        value = value + count
+        count = count + 1
+
+    sequence.append(value)
+
 
 
 # You may wish to use further output for testing purposes while you develop your code
