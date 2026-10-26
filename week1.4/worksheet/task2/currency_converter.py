@@ -6,7 +6,7 @@
     other than any provided template code, was written and developed by
     you independently.
 
-    Name:
+    Name: Martha Cawood
 """
 
 def currency_converter(amount, from_currency, to_currency):
@@ -19,9 +19,16 @@ def currency_converter(amount, from_currency, to_currency):
     }
 
     # your code here
+    for key, value in conversion_rate.items():
+        if key == from_currency:
+            specific_conversion_rates = value
+
+    print(key)
+    print(value)
 
     return None
 
 # Submit only this file currency_converter.py with the completed function.
 
 # Remove any additional code you may have added during development and testing.
+currency_converter(100, "PHP", "GBP")
