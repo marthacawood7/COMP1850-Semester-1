@@ -19,16 +19,25 @@ def currency_converter(amount, from_currency, to_currency):
     }
 
     # your code here
-    for key, value in conversion_rate.items():
-        if key == from_currency:
-            specific_conversion_rates = value
+    
+    if amount >= 0:
+        for key, value in conversion_rate.items():
+            if key == from_currency:
+                specific_conversion_rates = value
 
-    print(key)
-    print(value)
+                for key, value in specific_conversion_rates.items():
+                    if key == to_currency:
+                        specific_to_currency = value
 
-    return None
+        conversion = amount * specific_to_currency
+        
+
+        return conversion
+    
+    else:
+        return 0.0
 
 # Submit only this file currency_converter.py with the completed function.
 
 # Remove any additional code you may have added during development and testing.
-currency_converter(100, "PHP", "GBP")
+print(currency_converter(-100, "GBP", "PHP"))
