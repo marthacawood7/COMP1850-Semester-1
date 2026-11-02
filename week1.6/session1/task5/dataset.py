@@ -11,6 +11,9 @@ class QuakeDatasetError(Exception):
     An exception type for errors involving QuakeDataset.
     """
 
+    try:
+        
+
 
 class QuakeDataset:
     """
