@@ -12,20 +12,22 @@ class Person:
     
     def __init__(self, name, birth):
         
-        if isinstance(name, str):
-            self.name = name
-        else:
-            print("Invalid name")
-            self.name = "Unknown"
+        if not isinstance(name, str):
+            raise TypeError("Name must be a string")
 
-        if isinstance(birth, str):
-            try:
-                self.birth = datetime.strptime(birth, "%d/%m/%Y").date()
-            except ValueError:
-                print("Invalid date")
-                self.birth = None
-        else:
-            self.birth = "Invalid date"
+        if name == "":
+            raise ValueError("Name cannot be empty")
+        
+        self.name = name
+
+        if not isinstance(birth, str):
+            raise TypeError("Birth must be a string")
+
+        try:
+            self.birth = datetime.strptime(birth, "%d/%m/%Y").date()
+        except ValueError:
+            raise ValueError("Birth must be a valid date in the correct format")
+        
 
 
     def __str__(self):
