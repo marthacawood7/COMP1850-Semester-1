@@ -11,7 +11,6 @@ class Person:
     # birth fields (see README.md for further details)
     
     def __init__(self, name, birth):
-        self.name = name
         
         if isinstance(name, str):
             self.name = name
@@ -19,11 +18,14 @@ class Person:
             print("Invalid name")
             self.name = "Unknown"
 
-        try:
-            self.birth = datetime.strptime(birth, "%d/%m/%Y").date()
-        except ValueError:
-            print("Invalid date")
-            self.birth = None
+        if isinstance(birth, str):
+            try:
+                self.birth = datetime.strptime(birth, "%d/%m/%Y").date()
+            except ValueError:
+                print("Invalid date")
+                self.birth = None
+        else:
+            self.birth = "Invalid date"
 
 
     def __str__(self):
