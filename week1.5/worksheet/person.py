@@ -28,10 +28,25 @@ class Person:
         except ValueError:
             raise ValueError("Birth must be a valid date in the correct format")
         
+    def intitials(self):
+        intials = []
+        for word in self.name.split():
+            initials.append(word[0])
+            return initials
+
+    def is_birthday(self):
+        if self.birth == date.today():
+            return True
+
+        else:
+            return False
+        
 
 
     def __str__(self):
         return f"{self.name} has birthday on the {self.birth}"
+        return f"Is it their birthday today? {is_birthday(self)}"
+        return f"Their initials are: {initials(self)}"
 
     
 
