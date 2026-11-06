@@ -1,6 +1,6 @@
 # Worksheet 1.5: Person class
 
-from datetime import datetime
+from datetime import date
 
 class Person:
     """
@@ -11,6 +11,7 @@ class Person:
     # birth fields (see README.md for further details)
     
     def __init__(self, name, birth):
+        """Initialise the person object"""
         
         if not isinstance(name, str):
             raise TypeError("Name must be a string")
@@ -20,22 +21,21 @@ class Person:
         
         self.name = name
 
-        if not isinstance(birth, str):
-            raise TypeError("Birth must be a string")
+        if not isinstance(birth, date):
+            raise TypeError("Birth must be a date")
 
-        try:
-            self.birth = datetime.strptime(birth, "%d/%m/%Y").date()
-        except ValueError:
-            raise ValueError("Birth must be a valid date in the correct format")
+        self.birth = birth
         
-    def intitials(self):
-        intials = []
+    def initials(self):
+        """Returns the initials of the person"""
+        initials = ""
         for word in self.name.split():
-            initials.append(word[0])
-            return initials
+            initials = initials + word[0].upper()
+        return initials
 
     def is_birthday(self):
-        if self.birth == date.today():
+        """Returns true if it is the persons birthday today, false otherwise"""
+        if self.birth.month == date.today().month and self.birth.day == date.today().day:
             return True
 
         else:
@@ -44,23 +44,18 @@ class Person:
 
 
     def __str__(self):
-        return f"{self.name} has birthday on the {self.birth}"
-        return f"Is it their birthday today? {is_birthday(self)}"
-        return f"Their initials are: {initials(self)}"
-
+        return f"{self.name} has birthday on the {self.birth}. Is it their birthday today? {self.is_birthday()}. Their initials are: {self.initials()}"
     
 
     
 
-person1 = Person("Martha", "12/09/2007")
-person2 = Person("Henry", 234)
-person3 = Person(234, "09/06/2008")
+person1 = Person("Martha Cawood", date(2007, 9, 12))
+
 
 
 
 print(person1)
-print(person2)
-print(person3)
+
 
     # Implement methods initials() and is_birthday() here
     # (see README.md for further details)
