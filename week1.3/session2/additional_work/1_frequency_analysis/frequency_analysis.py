@@ -22,3 +22,21 @@
 # story.txt
 # letter frequency: please double check
 # {'o': 7, 'n': 11, 'c': 2, 'e': 24, 'u': 5, 'p': 1, 'a': 15, 't': 14, 'i': 8, 'm': 2, 'f': 1, 'r': 8, 'w': 2, 'y': 2, 'l': 12, 'd': 10, 'h': 7, 'v': 3, 's': 5, 'g': 3}
+
+
+def count_letters(data):
+    letter_count = {}
+    for letter in data:
+        if letter in letter_count:
+            letter_count[letter] = letter_count[letter] + 1
+        else:
+            letter_count[letter] = 1
+    return letter_count
+
+def count_file(data):
+    with open(data, "r") as file:
+        data = file.read()
+    return count_letters(data)
+
+print(f"CODE DICT: {count_file("code.txt")}")
+print(f"STORY DICT:  {count_file("story.txt")}")
