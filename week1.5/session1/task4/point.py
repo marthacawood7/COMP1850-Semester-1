@@ -1,3 +1,4 @@
+# Week 1.5, Session 1: Task 3
 import math
 
 class Point:
@@ -42,4 +43,4 @@ class Circle:
 
     def perimeter(self, radius):
         perimeter = (self.radius*2)*math.pi
-        returns perimeter
+        return perimeter
