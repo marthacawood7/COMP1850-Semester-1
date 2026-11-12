@@ -53,4 +53,4 @@ if __name__ == "__main__":
 
     for student, mark in marks.items():
         student_grade = grade(mark)
-        print(f"{student}: {student_grade}")
+        print(f"{student} : {student_grade}")

@@ -1,0 +1,5 @@
+INFO:root:calculate_average(): started
+INFO:root:total score: 263
+INFO:root:total assignents: 3
+INFO:root:dividing 263 by 3
+INFO:root:average: 87.66666666666667
